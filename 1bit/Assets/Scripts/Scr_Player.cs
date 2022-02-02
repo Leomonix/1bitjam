@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Scr_Player : MonoBehaviour
 {
-    public Vector3 Movement;
-    public float Velocity;
+    public Vector3 Movimiento;
+    public float Velocidad;
     public Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -17,9 +17,9 @@ public class Scr_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement = new Vector3(Input.GetAxisRaw("Horizontal") * Velocity, Input.GetAxisRaw("Vertical") * Velocity, 0);
-        Movement = Movement.normalized;
-        //transform.position += Movement * Velocity * Time.deltaTime;
-        rb.velocity = new Vector2(Movement.x * Velocity, Movement.y * Velocity);
+        Movimiento = new Vector3(Input.GetAxisRaw("Horizontal") * Velocidad, Input.GetAxisRaw("Vertical") * Velocidad, 0);
+        Movimiento = Movimiento.normalized;
+        //transform.position += Movimiento * Velocidad * Time.deltaTime;
+        rb.velocity = new Vector2(Movimiento.x, Movimiento.y);
     }
 }
